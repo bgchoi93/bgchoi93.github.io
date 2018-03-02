@@ -1,22 +1,27 @@
 import * as React from 'react';
 import './App.css';
-
-const logo = require('./logo.svg');
+import { PageMenu } from './menu/PageMenu';
+import { Grid, Segment } from 'semantic-ui-react';
 
 class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="app-container">
+                <Grid>
+                    <Grid.Column width={2}>
+                        <PageMenu/>
+                    </Grid.Column>
+
+                    <Grid.Column stretched={true} width={14}>
+                        <Segment>
+                            This is an stretched grid column. This segment will always match the tab height
+                        </Segment>
+                    </Grid.Column>
+                </Grid>
+
+            </div>
+        );
+    }
 }
 
 export default App;
